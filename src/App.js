@@ -13,18 +13,18 @@ function App() {
 
 
  
-	const getMovie = async (searchValue) => {
-    const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=a4381a9c`;
+	// eslint-disable-next-line react-hooks/exhaustive-deps
+	useEffect( async () => {
+		const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=a4381a9c`;
     console.log(url);
 
-    const response = await fetch(url);
-    const responseJson = await response.json();
+		const response = await fetch(url);
+		const responseJson = await response.json();
 
-    if (responseJson.Search) {
+		if (responseJson.Search) {
 			setMovies(responseJson.Search);
 		}
-    
-  }
+	}, [searchValue]);
 
 
   useEffect(() => {
@@ -60,9 +60,6 @@ console.log(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
 
-  useEffect(() => {
-		getMovie(searchValue);
-	}, [searchValue]);
 
   return (
     <div className=''>
