@@ -4,10 +4,11 @@ import React from 'react';
 const MovieLists = ({movies, handleFavClick, favourite}) => {
   const Favourite = favourite;
 console.log(movies);
+
   return (
     <div className='overflow-x-scroll flex flex-row space-x-5 scrolll'>
       {movies.map(movie => (
-        <div className="relative rounded" key={movie.imbDB}>
+        <div className="relative rounded" key={movie.imdbID}>
            <a className="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"> 
             <h1 className='tracking-wider' >{movie.Title}</h1>
             <div

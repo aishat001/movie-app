@@ -12,19 +12,19 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
 
-  useEffect(() => {
-    async function getMovie() {
+ 
+	const getMovie = async (searchValue) => {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=a4381a9c`;
     console.log(url);
 
     const response = await fetch(url);
     const responseJson = await response.json();
 
-      setMovies(responseJson.Search);
+    if (responseJson.Search) {
+			setMovies(responseJson.Search);
+		}
     
   }
-getMovie()
-  }, [searchValue]);
 
 
   useEffect(() => {
@@ -59,6 +59,10 @@ console.log(newFavouriteList);
     setFavourites(newFavouriteList);
     saveToLocalStorage(newFavouriteList);
   };
+
+  useEffect(() => {
+		getMovie(searchValue);
+	}, [searchValue]);
 
   return (
     <div className=''>
