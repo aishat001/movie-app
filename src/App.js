@@ -12,17 +12,18 @@ function App() {
   const [favourites, setFavourites] = useState([]);
 
 
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  useEffect(async () => {
+  useEffect(() => {
+    async function getMovie() {
     const url = `http://www.omdbapi.com/?s=${searchValue}&apikey=a4381a9c`;
     console.log(url);
 
     const response = await fetch(url);
     const responseJson = await response.json();
 
-    if (responseJson.Search) {
       setMovies(responseJson.Search);
-    }
+    
+  }
+getMovie()
   }, [searchValue]);
 
 

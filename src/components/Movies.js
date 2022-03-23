@@ -7,9 +7,9 @@ console.log(movies);
   return (
     <div className='overflow-x-scroll flex flex-row space-x-5 scrolll'>
       {movies.map(movie => (
-        <div class="relative rounded">
-           <a class="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"> 
-            <h1 class='tracking-wider' >{movie.Title}</h1>
+        <div className="relative rounded" key={movie.imbDB}>
+           <a className="absolute inset-0 z-10 bg-white text-center flex flex-col items-center justify-center opacity-0 hover:opacity-100 bg-opacity-90 duration-300"> 
+            <h1 className='tracking-wider' >{movie.Title}</h1>
             <div
             	onClick={() => handleFavClick(movie)}
               >
@@ -17,8 +17,8 @@ console.log(movies);
 
             </div>
           </a> 
-          <a href="#" class="relative">
-            <div class="w-52 h-52 sm:h-80 sm:w-80 flex flex-wrap content-center rounded-xl">
+          <a href="#" className="relative">
+            <div className="w-52 h-52 sm:h-80 sm:w-80 flex flex-wrap content-center rounded-xl">
               <img src={movie.Poster} title={movie.Title} alt='movie' className='w-52 h-52 sm:h-80 sm:w-80 rounded-xl' />
             </div>
           </a>
