@@ -27,15 +27,15 @@ function App() {
 	}, [searchValue]);
 
 
-  useEffect(() => {
+  // useEffect(() => {
 
-    const favourites = JSON.parse(localStorage.getItem('favourites'));
+  //   const favourites = JSON.parse(localStorage.getItem('favourites'));
 
-    setFavourites(favourites);
+  //   setFavourites(favourites);
 
-  }, []);
+  // }, []);
 
-  const saveToLocalStorage = (items) => { localStorage.setItem('favourites', JSON.stringify(items)); }
+  // const saveToLocalStorage = (items) => { localStorage.setItem('favourites', JSON.stringify(items)); }
 
 
   // add to favourites
@@ -45,7 +45,7 @@ let filteredFavourites = favourites.filter(fav => fav.imdbID !== movie.imdbID)
 
       const newFavouriteList = [...filteredFavourites, movie];
       setFavourites(newFavouriteList);
-      saveToLocalStorage(newFavouriteList);
+      // saveToLocalStorage(newFavouriteList);
 
 
   };
@@ -57,7 +57,7 @@ let filteredFavourites = favourites.filter(fav => fav.imdbID !== movie.imdbID)
     );
 console.log(newFavouriteList);
     setFavourites(newFavouriteList);
-    saveToLocalStorage(newFavouriteList);
+    // saveToLocalStorage(newFavouriteList);
   };
 
 
