@@ -18,8 +18,8 @@ console.log(movies);
             </div>
           </a> 
           <a href="#" class="relative">
-            <div class="h-80 w-80 flex flex-wrap content-center rounded-xl">
-              <img src={movie.Poster} title={movie.Title} alt='movie' className='w-80 h-80 rounded-xl' />
+            <div class="w-52 h-52 sm:h-80 sm:w-80 flex flex-wrap content-center rounded-xl">
+              <img src={movie.Poster} title={movie.Title} alt='movie' className='w-52 h-52 sm:h-80 sm:w-80 rounded-xl' />
             </div>
           </a>
         </div>
